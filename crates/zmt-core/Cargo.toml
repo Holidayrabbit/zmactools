@@ -1,0 +1,12 @@
+[package]
+name = "zmt-core"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+description = "A small, stable core for ZMacTools Finder actions."
+license = "MIT"
+
+[lib]
+name = "zmt_core"
+crate-type = ["staticlib", "rlib"]
+

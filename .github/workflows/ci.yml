@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: Test Rust core
+        run: cargo test --workspace
+
+      - name: Build app and Finder extension
+        run: ./scripts/build.sh
+
+      - name: Verify signatures
+        run: |
+          codesign --verify --strict --deep build/ZMacTools.app
+          plutil -lint build/ZMacTools.app/Contents/Info.plist
+          plutil -lint build/ZMacTools.app/Contents/PlugIns/ZMacToolsFinder.appex/Contents/Info.plist

@@ -1,4 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#9333ea"/>
-  <text x="32" y="32" dy="0.35em" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#ffffff">Z</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="ZMacTools">
+  <defs>
+    <linearGradient id="surface" x1="176" y1="132" x2="858" y2="902" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4B7FC4"/>
+      <stop offset="0.52" stop-color="#2F5C9E"/>
+      <stop offset="1" stop-color="#1E3F70"/>
+    </linearGradient>
+    <radialGradient id="highlight" cx="0" cy="0" r="1" gradientTransform="translate(264 216) rotate(44) scale(720)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="0.46" stop-color="#FFFFFF" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mark" x1="318" y1="312" x2="708" y2="716" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F4F8FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#102844" flood-opacity="0.30"/>
+    </filter>
+    <filter id="markShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#122E50" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <rect x="92" y="92" width="840" height="840" rx="188" fill="url(#surface)" filter="url(#shadow)"/>
+  <rect x="92" y="92" width="840" height="840" rx="188" fill="url(#highlight)"/>
+  <rect x="106" y="106" width="812" height="812" rx="174" fill="none" stroke="#FFFFFF" stroke-opacity="0.13" stroke-width="2"/>
+
+  <path
+    d="M318 330H706L318 694H706"
+    fill="none"
+    stroke="url(#mark)"
+    stroke-width="94"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#markShadow)"
+  />
 </svg>
